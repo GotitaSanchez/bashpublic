@@ -3,10 +3,11 @@
 # Este script va a hacer un backup del escritorio del usuario en /tmp/.
 
 function backup {
+    echo $1
     ## -z regresa verdadero si el tamaño del string es 0
     ## Lo utilizamos para saber si el parámetro $1 tiene información
     if [ -z $1 ]; then
-    	user=$(whoami)
+	user=$(whoami)
     else
     	## -d regresa verdadero si el directorio existe
     	if [ ! -d "/home/$1/Desktop" ]; then
